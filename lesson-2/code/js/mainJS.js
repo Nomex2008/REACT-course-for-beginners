@@ -47,6 +47,43 @@ const btn = {
 //console style
 console.log(wrapperStyle,Title,text);
 
+//lesson2
+const title2 = {
+    fontFamily: 'Nunito',
+    fontSize: '20px',
+    fontStyle: 'normal',
+    fontWeight: '600',
+    lineHeight: '20%',  //60px 
+
+    margin: '80px 0 0 0',
+}
+const title3 = {
+    fontFamily: 'Nunito',
+    fontSize: '16px',
+    fontStyle: 'normal',
+    fontWeight: '600',
+    lineHeight: '20%',  //60px 
+
+    margin: '20px 0 0 0',
+}
+
+let someLayout = 'JSX syntax'
+
+let someLayout2 = (<h2 style={title3}>JSX syntax 2</h2>)
+console.log(someLayout2)
+
+let someSum = 2 * 1000
+
+function returnSum(a,b) {
+     return a + b
+}
+
+const someArr = [
+    'Private',
+    'Comunickation',
+    'Enaglish',
+]
+
 //react DOM
 ReactDOM.createRoot(rootElement).render(
 
@@ -63,6 +100,32 @@ ReactDOM.createRoot(rootElement).render(
         <a className="btns" style={btn} target='_blank' href="https://github.com/Nomex2008">
             My GitHub)
         </a>
+
+        <h2 style={title2}>
+            {someLayout}
+        </h2>
+
+        {someLayout2}
+
+        <p style={text}>
+            Salary React-developra {someSum}$
+        </p>
+
+        <p style={text}>
+            Salary JS-developra {returnSum(500,500)}$
+        </p>
+
+        <h2 style={title2}>
+            Requirements:
+        </h2>
+
+        <ul style={text}>
+            {
+                someArr.map((item,index) => (
+                    <li key={index}>{item}</li>
+                ))
+            }
+        </ul>
 
     </div>
 
