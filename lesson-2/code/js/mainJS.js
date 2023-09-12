@@ -84,16 +84,24 @@ const someArr = [
     'Enaglish',
 ]
 
+//commit3
+function Ifclick() {
+    console.log('Click!')
+}
+function alertMasege() {
+    alert("Hello world!")
+}
+
 //react DOM
 ReactDOM.createRoot(rootElement).render(
 
-    <div style={wrapperStyle}>
+    <div onClick={Ifclick} style={wrapperStyle}>
 
         <h1 style={Title}>My projectin in React2</h1>
 
         <div style={text}>
             <p>
-            JSX for beginners. Using JSX syntax in React, practical examples, clear explanation
+                JSX for beginners. Using JSX syntax in React, practical examples, clear explanation
             </p>
         </div>
 
@@ -115,17 +123,24 @@ ReactDOM.createRoot(rootElement).render(
             Salary JS-developra {returnSum(500,500)}$
         </p>
 
-        <h2 style={title2}>
-            Requirements:
-        </h2>
+        {Boolean(someArr.length) &&
+            <>
+            <h2 style={title2}>
+                Requirements:
+            </h2>
 
-        <ul style={text}>
-            {
-                someArr.map((item,index) => (
-                    <li key={index}>{item}</li>
-                ))
-            }
-        </ul>
+            <ul style={text}>
+                {
+                    someArr.map((item,index) => (
+                        <li key={index}>{item}</li>
+                    ))
+                }
+            </ul>
+            </>
+        }
+        <div onClick={alertMasege} style={{color:'red',fontSize:'20px',fontFamily: 'Nunito',margin:'20px 0 0 0',}}>
+            Red
+        </div>
 
     </div>
 
